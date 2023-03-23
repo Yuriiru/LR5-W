@@ -61,7 +61,7 @@ namespace Reader_Namespace
         }
     }
 }
-namespace laba_5
+namespace LR_5
 {
     internal class Program
     {
