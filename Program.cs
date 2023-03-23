@@ -30,14 +30,16 @@ namespace Reader_Namespace
         private string fio;
         public int numberReadTick;
         public string faculty;
-        private int age;
+        private string bd;
+        public string telephone;
 
-        public Reader(string fio, int numberReadTick, string faculty, int age)
+        public Reader(string fio, int numberReadTick, string faculty, string bd, string telephone)
         {
             this.fio = fio;
             this.numberReadTick = numberReadTick;
             this.faculty = faculty;
-            this.age = age;
+            this.bd = bd;
+            this.telephone = telephone;
         }
 
         public void takeBook(int numberBook)
@@ -61,7 +63,7 @@ namespace Reader_Namespace
         }
     }
 }
-namespace LR_5
+namespace laba_5
 {
     internal class Program
     {
@@ -76,12 +78,12 @@ namespace LR_5
 
             Reader[] libraryUsers =
             {
-                new Reader("Русинов Ю. А.",8395883 , "Программирование", 19),
-                new Reader("Жирнова Е. А.",63754845 , "Моделирование", 18),
-                new Reader("Марусик М. А.", 23756347, "Экология", 19)
+                new Reader("Русинов Ю. А.",8395883 , "Программирование", "22.02.04","89095638858"),
+                new Reader("Жирнова Е. А.",63754845 , "Моделирование", "10.06.04","8994738836"),
+                new Reader("Марусик М. А.", 23756347, "Экология", "17.01.04","89635683400")
             };
 
-            Console.ReadLine();
+          
         }
     }
 }
