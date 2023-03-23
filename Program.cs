@@ -1,43 +1,87 @@
-﻿namespace ConsoleApp4;
+using Reader_Namespace;
+using Student_Namespace;
 
-using StudentNamespace;
-using ReaderNamespace;
+namespace Student_Namespace
+{
+    public class Student
+    {
 
+        public string Fio;
+        public string group;
+        private int age;
+
+        public Student(string Fio, string group, int age)
+        {
+            this.Fio = Fio;
+            this.group = group;
+            this.age = age;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine("фамилия" + Fio + "группа" + group + "возраст" + age);
+        }
+    }
+}
+namespace Reader_Namespace
+{
+    public class Reader
+    {
+        private string fio;
+        public int numberReadTick;
+        public string faculty;
+        private int age;
+
+        public Reader(string fio, int numberReadTick, string faculty, int age)
+        {
+            this.fio = fio;
+            this.numberReadTick = numberReadTick;
+            this.faculty = faculty;
+            this.age = age;
+        }
+
+        public void takeBook(int numberBook)
+        {
+            Console.WriteLine(String.Format("{0} взял {1} книг(и)"), fio, numberBook);
+        }
+
+        public void takeBook(string namesBook)
+        {
+            Console.WriteLine(String.Format("{0} взял {1} книг(и)"), fio, namesBook);
+        }
+
+        public void returnBook(int numberBook)
+        {
+            Console.WriteLine(String.Format("{0} взял {1} книг(и)"), fio, numberBook);
+        }
+
+        public void returnBook(string namesBook)
+        {
+            Console.WriteLine(String.Format("{0} взял {1} книг(и)"), fio, namesBook);
+        }
+    }
+}
+namespace laba_5
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
-            StudentNamespace.Student[] students = {
-                new StudentNamespace.Student("Байкин Н.Д.", 2789, 18),
-                new StudentNamespace.Student("Иванов Д.A.", 2710, 18),
-                new StudentNamespace.Student("Марусик М.Д.", 1437, 19)
+            Student[] students =
+            {
+                new Student("Русинов Ю. А.","20ИТ17", 19),
+                new Student("Жирнова Е. А.", "20ИТ17", 18),
+                new Student("Марусик М. А.","20ИТ17", 19)
             };
 
-            ReaderNamespace.Reader[] readers = {
-                new ReaderNamespace.Reader("Байкин Н.Д.", 138900, "Программирование и информационные системы", new DateTime(2004, 11, 11), "89875678978"),
-                new ReaderNamespace.Reader("Иванов Д.A.", 456789, "Программирование и информационные системы", new DateTime(2004, 06, 27), "89271765423"),
-                new ReaderNamespace.Reader("Марусик М.Д.", 283891, "Программирование и информационные системы", new DateTime(2004, 02, 03), "89003459971")
+            Reader[] libraryUsers =
+            {
+                new Reader("Русинов Ю. А.",8395883 , "Программирование", 19),
+                new Reader("Жирнова Е. А.",63754845 , "Моделирование", 18),
+                new Reader("Марусик М. А.", 23756347, "Экология", 19)
             };
-            foreach (var student in students)
-            {
-                student.PrintDisplay();
-            }
 
-            foreach (var reader in readers)
-            {
-                reader.PrintDisplay();
-            }
-
-            readers[0].takeBook(2);
-            readers[1].takeBook("1984", "Метро");
-            readers[0].returnBook(2);
-            readers[1].returnBook("1984", "Метро");
-            readers[2].takeBook(4);
-            readers[2].takeBook("Мгла", "Сияние", "Мизери", "Под куполом");
-            readers[2].returnBook(4);
-            readers[2].returnBook("Мгла", "Сияние", "Мизери", "Под куполом");
-
+            Console.ReadLine();
         }
     }
 }
